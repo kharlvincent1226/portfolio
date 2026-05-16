@@ -931,6 +931,28 @@
       color: var(--text-secondary);
       line-height: 1.75;
     }
+
+    .resume-img-wrap {
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(74, 173, 88, 0.12);
+      max-height: clamp(300px, 40vh, 520px);
+    }
+    .resume-img-wrap img.resume-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .resume-img-placeholder {
+      min-height: 240px;
+      display: grid;
+      place-items: center;
+      gap: 12px;
+      padding: 28px 20px;
+    }
     .resume-panel ul {
       padding-left: 18px;
       display: flex;
@@ -1673,7 +1695,10 @@
             <div class="proj-stack">
               <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Canvas API</span>
             </div>
-           
+            <div class="proj-actions">
+              <a class="btn btn-ghost" href="#">Live Demo</a>
+              <a class="btn btn-primary" href="#">GitHub</a>
+            </div>
           </div>
         </article>
 
@@ -1716,8 +1741,7 @@
     </div>
   </section>
 
-  <!-- ====================== RESUME ====================== -->
-  <section class="section" id="resume" style="background:var(--g1);">
+ <section class="section" id="resume" style="background:var(--g1);">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">Resume</div>
@@ -1726,51 +1750,95 @@
       <div class="resume-grid">
         <div class="resume-panel reveal delay-1">
           <h3>Career Objective</h3>
-          <p>To continuously develop my skills in software development, UI/UX design, and modern technologies while gaining valuable experience in the tech industry. Dedicated to creating innovative, user-friendly, and impactful digital solutions that combine functionality, creativity, and continuous learning.</p>
+          <p>To join forward-thinking development teams, contribute polished software systems, and create outstanding user experiences through expert engineering — where technology meets purposeful design.</p>
           <div class="resume-detail">
             <h4>Education</h4>
-            <p>Currently a 3rd-year Bachelor of Science in Computer Science student, continuously expanding knowledge and technical skills through academic learning, project development, and hands-on experience in modern technology and digital innovation.</p>
+            <p>BS Computer Science — focused on software engineering, embedded systems, and modern digital product design with a commitment to academic and practical excellence.</p>
           </div>
           <div class="resume-detail">
             <h4>Technical Competencies</h4>
             <ul>
               <li>Frontend development, responsive UI, and motion design</li>
+              <li>Back-end architecture, databases, and REST APIs</li>
+              <li>Embedded systems, IoT sensors, and intelligent integrations</li>
               <li>UI/UX design, prototyping, and user research</li>
             </ul>
           </div>
           <div class="resume-detail">
             <h4>Certifications</h4>
             <ul>
-              <li>TOPCIT CERTIFICATION EXAM (2025)</li>
+              <li>Google IT Support Fundamentals</li>
+              <li>Responsive Web Design — freeCodeCamp</li>
+              <li>Microsoft Office Specialist</li>
             </ul>
           </div>
         </div>
         <div class="resume-panel reveal delay-2">
-          <h3 style="margin-bottom:28px;">Experience Timeline</h3>
-          <div class="timeline">
-            <div class="tl-entry">
-              <div class="tl-year">2025</div>
-              <h4>Software Development Intern</h4>
-              <p>Supported software development workflows, contributed to testing pipelines, and refined product delivery processes in a professional engineering environment.</p>
+          <h3 style="margin-bottom:20px;">My Resume</h3>
+
+          <!--
+            ====================================================
+            RESUME IMAGE — HOW TO REPLACE THIS PLACEHOLDER:
+            ====================================================
+            1. Save your resume as an image (JPG or PNG).
+               Tip: Export from Canva, Word, or Adobe as
+               a high-resolution image (min. 800px wide).
+
+            2. Place the image file in the same folder as
+               this HTML file.
+
+            3. Replace the src below with your filename:
+               src="your-resume.jpg"
+               or
+               src="your-resume.png"
+
+            4. Update the alt text to your name if desired.
+
+            The image will automatically:
+            - Fill the full width of this panel
+            - Scale responsively on all screen sizes
+            - Show with a subtle green border & hover glow
+            - Open full-size in a new tab when clicked
+            ====================================================
+          -->
+          <a href="your-resume.jpg" target="_blank" title="Click to view full resume" style="display:block;">
+            <div class="resume-img-wrap">
+              <img
+                src="resume.jpg.jpg"
+                alt="Karl Vincent L. Somorostro — Resume"
+                class="resume-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <!-- PLACEHOLDER shown when no image is set yet -->
+              <div class="resume-img-placeholder">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="4" width="32" height="40" rx="3" stroke="#4aad58" stroke-width="1.5" fill="none"/>
+                  <line x1="14" y1="14" x2="34" y2="14" stroke="#4aad58" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                  <line x1="14" y1="20" x2="34" y2="20" stroke="#4aad58" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+                  <line x1="14" y1="26" x2="28" y2="26" stroke="#4aad58" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+                  <line x1="14" y1="32" x2="30" y2="32" stroke="#4aad58" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                </svg>
+                <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;margin-top:12px;">RESUME IMAGE</span>
+                <span style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);margin-top:6px;text-align:center;line-height:1.6;max-width:200px;">
+                  Replace <code style="color:var(--accent-bright);font-size:11px;">src="your-resume.jpg"</code><br/>with your actual resume image file
+                </span>
+              </div>
             </div>
-            <div class="tl-entry">
-              <div class="tl-year">2024</div>
-              <h4>Academic Project Lead</h4>
-              <p>Directed the creation of sensor-based detection systems and student management platforms, managing full project lifecycle from requirements to deployment.</p>
-            </div>
-            <div class="tl-entry">
-              <div class="tl-year">2023</div>
-              <h4>Technical Team Leader</h4>
-              <p>Mentored fellow students, coordinated cross-functional teams, and championed technical excellence across multiple concurrent academic projects.</p>
-            </div>
-            <div class="tl-entry" style="padding-bottom:0;">
-              <div class="tl-year">2021–2022</div>
-              <h4>Self-Directed Learning</h4>
-              <p>Committed 2+ years to mastering web technologies, programming languages, and software engineering principles through structured self-study and project practice.</p>
-            </div>
+          </a>
+
+          <div class="resume-detail">
+            <h4>Overview</h4>
+            <ul>
+              <li>Aspiring Computer Science student with a strong passion for programming and software development. Seeking opportunities to apply my skills in coding, problem-solving, and system design to build efficient and innovative software solutions while continuously learning and growing as a developer.</li>
+            </ul>
           </div>
-          <div style="margin-top:32px;">
-            <a class="btn btn-primary" href="#" style="width:100%;justify-content:center;">⬇ Download Full CV</a>
+
+          <div style="margin-top:20px;">
+            <!--
+              Update href below to link directly to your resume PDF or image file.
+              Example: href="Karl_Vincent_Resume.pdf"
+            -->
+            <a class="btn btn-primary" href="your-resume.jpg" download style="width:100%;justify-content:center;">⬇ Download Full CV</a>
           </div>
         </div>
       </div>
